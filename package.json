@@ -1,0 +1,25 @@
+{
+  "name": "zipabox",
+  "version": "0.0.1",
+  "description": "Module de gestion de la Zipabox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djoulz22/zipabox.git"
+  },
+  "keywords": [
+    "zipabox",
+    "zipato"
+  ],
+  "author": {
+  	"name": "Julien CHENAVAS",
+	"mail": "jchenavas@gmail.com"
+	},
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/djoulz22/zipabox/issues"
+  }
+}
