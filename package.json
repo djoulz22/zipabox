@@ -25,6 +25,7 @@
   "devDependencies": {
    "request": "",
    "sequenty": "",
-   "crypto": ""
+   "crypto": "",
+   "colors": ""
    }
 }
