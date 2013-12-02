@@ -1,4 +1,4 @@
-# Zipabox(http://www.zipato.com) 
+# Zipabox (http://www.zipato.com) 
 
 This is a module to connect, load and use zipabox.
 
@@ -33,7 +33,39 @@ This is a module to connect, load and use zipabox.
 
 Control the zipabox
 
-### For Developers
+## For Developers
 
-Using module:
+Simple Usage of module:
+```js
+var zipabox = require("[PATH TO zipabox.js]/zipabox");
 
+zipabox.username = "[ZIPABOX LOGIN]";
+zipabox.password = "[ZIPABOX PASSWORD]";
+
+zipabox.Connect(function(){
+  // Do something when connected
+  zipabox.LoadDevices(
+    function(){
+      // Do something when all devices are loaded
+      zipabox.Disconnect();
+    },
+    function(device){
+      // Do something for each device loaded
+      // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
+      for (var uuid in device.json){				
+        	var devicejson = device.json[uuid];
+        			
+        	for (var attr in devicejson.attributes){				
+        		var attribute = devicejson.attributes[attr];
+        		if (typeof(attribute.value) != "undefined"){
+        			var attrname = attribute.name;                                        
+        			if (typeof(attribute.definition) != "undefined")
+                			attrname = attribute.definition.name;
+                                
+        			console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
+                        }	
+        	}
+        }      
+    });
+});
+```
