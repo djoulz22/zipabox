@@ -51,27 +51,10 @@ zipabox.Connect(function () {
         function (device) {
             // Do something for each device loaded
             // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
+            console.log("" + device);
 
-            if (device.canprettyprint) {
-                for (var uuid in device.json) {
-                    var devicejson = device.json[uuid];
-
-                    for (var attr in devicejson.attributes) {
-                        var attribute = devicejson.attributes[attr];
-                        if (typeof (attribute.value) != "undefined") {
-                            var attrname = attribute.name;
-                            if (typeof (attribute.definition) != "undefined")
-                                attrname = attribute.definition.name;
-
-                            console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
-                        }
-                    }
-                }
-            } else {
-                if (device.toString.name != "toString")
-                    console.log("" + device);
-                else
-                    console.log(JSON.stringify(device.json, null, 4));
+            if (typeof (device.json["123456"]) != "undefined") {
+                device.json["123456"].attributes["11"].setdatas(true);
             }
         });
 });
