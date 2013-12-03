@@ -59,3 +59,62 @@ zipabox.Connect(function () {
         });
 });
 ```
+
+Disable Logging :
+```js
+zipabox.showlog = false;
+```
+
+## Detailed Documentation :
+### Creating Object :
+The Object is JSON type object
+```js
+var zipabox = require("[PATH TO zipabox.js]/zipabox");
+```
+### Object's usual properties :
+#### Show Logs
+```js
+zipabox.showlog=true;
+```
+#### Define Username and Password
+```js
+zipabox.username="toto@titi.com";
+zipabox.password="blabliblu";
+```
+#### Knowing if Zipabox connection is open
+```js
+zipabox.connected=false;
+```
+#### Methods :
+```js
+zipabox.Connect([optionnal]ON_AFTERCONNECT_FUNCTION_DEFINITION);
+zipabox.Disconnect([optionnal]ON_AFTERDISCONNECT_FUNCTION_DEFINITION);
+
+zipabox.LoadDevices([optionnal]ON_AFTERLOADDEVICES,[optionnal]FOREACH_LOADED_DEVICE);
+```
+##### Example :
+```js
+function OnAfterZipaboxDisconnect(){
+    console.log("Disconnected");
+}
+
+function OnAfterZipaboxConnect(){
+    console.log("Connected");
+    
+    zipabox.LoadDevices(OnAfterLoadDevices,ForEachLoadedDevice);
+    // OR 
+    zipabox.LoadDevices(OnAfterLoadDevices);
+    // OR 
+    zipabox.LoadDevices(null,ForEachLoadedDevice);
+}
+
+function OnAfterLoadDevices(){
+    zipabox.Disconnect(OnAfterZipaboxDisconnect);
+}
+
+function ForEachLoadedDevice(device){
+    console.log(""+device); //Call device.toString() whith "" before device else show JSON Object (as object)
+}
+
+zipabox.Connect(OnAfterZipaboxConnect);
+```
