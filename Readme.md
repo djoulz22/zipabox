@@ -54,17 +54,22 @@ zipabox.Connect(function(){
       // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
       for (var uuid in device.json){				
         	var devicejson = device.json[uuid];
-        			
-        	for (var attr in devicejson.attributes){				
-        		var attribute = devicejson.attributes[attr];
-        		if (typeof(attribute.value) != "undefined"){
-        			var attrname = attribute.name;                                        
-        			if (typeof(attribute.definition) != "undefined")
-                			attrname = attribute.definition.name;
-                                
-        			            console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
-                        }	
-        	}
+        	        
+        	if (device.name != "thermostats"){
+                	for (var attr in devicejson.attributes){				
+                		var attribute = devicejson.attributes[attr];
+                		if (typeof(attribute.value) != "undefined"){
+                			var attrname = attribute.name;                                        
+                			if (typeof(attribute.definition) != "undefined")
+                        			attrname = attribute.definition.name;
+                                        
+                			console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
+                                }	
+                	}
+                }
+                else {
+                        console.log(JSON.stringify(devicejson, null, 4));
+                }
         }      
     });
 });
