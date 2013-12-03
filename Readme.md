@@ -42,35 +42,38 @@ var zipabox = require("[PATH TO zipabox.js]/zipabox");
 zipabox.username = "[ZIPABOX LOGIN]";
 zipabox.password = "[ZIPABOX PASSWORD]";
 
-zipabox.Connect(function(){
-  // Do something when connected
-  zipabox.LoadDevices(
-    function(){
-      // Do something when all devices are loaded
-      zipabox.Disconnect();
-    },
-    function(device){
-      // Do something for each device loaded
-      // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
-      for (var uuid in device.json){				
-        	var devicejson = device.json[uuid];
-        	        
-        	if (device.name != "thermostats"){
-                	for (var attr in devicejson.attributes){				
-                		var attribute = devicejson.attributes[attr];
-                		if (typeof(attribute.value) != "undefined"){
-                			var attrname = attribute.name;                                        
-                			if (typeof(attribute.definition) != "undefined")
-                        			attrname = attribute.definition.name;
-                                        
-                			console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
-                                }	
-                	}
+zipabox.Connect(function () {
+    // Do something when connected
+    zipabox.LoadDevices(
+        function () {
+            // Do something when all devices are loaded
+            zipabox.Disconnect();
+        },
+        function (device) {
+            // Do something for each device loaded
+            // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
+
+            if (device.canprettyprint) {
+                for (var uuid in device.json) {
+                    var devicejson = device.json[uuid];
+
+                    for (var attr in devicejson.attributes) {
+                        var attribute = devicejson.attributes[attr];
+                        if (typeof (attribute.value) != "undefined") {
+                            var attrname = attribute.name;
+                            if (typeof (attribute.definition) != "undefined")
+                                attrname = attribute.definition.name;
+
+                            console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
+                        }
+                    }
                 }
-                else {
-                        console.log(JSON.stringify(devicejson, null, 4));
-                }
-        }      
-    });
+            } else {
+                if (device.toString.name != "toString")
+                    console.log("" + device);
+                else
+                    console.log(JSON.stringify(device.json, null, 4));
+            }
+        });
 });
 ```
