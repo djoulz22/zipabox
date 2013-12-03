@@ -123,3 +123,39 @@ function ForEachLoadedDevice(device){
 
 zipabox.Connect(OnAfterZipaboxConnect);
 ```
+
+### Set Device Value
+#### Methods :
+```js
+zipabox.SetDeviceValue(UUID,[attribute],[value],[optionnal]ON_SUCCESS,[optionnal]ON_ERROR);
+```
+##### Example :
+```js
+function OnAfterZipaboxDisconnect(){
+    console.log("Disconnected");
+}
+
+function OnAfterZipaboxConnect(){
+    console.log("Connected");  
+    console.log("Loading devices : ");  
+    zipabox.LoadDevices(OnAfterLoadDevices,ForEachLoadedDevice);
+}
+
+function OnAfterLoadDevices(){
+		
+    zipabox.SetDeviceValue("12324654",11,true,
+	    function(msg){
+	    	console.log("Yes! ;-)");
+	    	zipabox.Disconnect(OnAfterZipaboxDisconnect);	
+	    },function(err){
+	    	console.log("Oh no! It's a bad day! :'-(");
+	    	zipabox.Disconnect(OnAfterZipaboxDisconnect);		
+	    });
+}
+
+function ForEachLoadedDevice(device){
+    console.log(""+device); //Call device.toString() whith "" before device else show JSON Object (as object)
+}
+
+zipabox.Connect(OnAfterZipaboxConnect);
+```
