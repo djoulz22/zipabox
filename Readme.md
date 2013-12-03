@@ -65,6 +65,11 @@ Disable Logging :
 zipabox.showlog = false;
 ```
 
+Adding Date/Time prefix to log (if zipabox.showlog is true):
+```js
+zipabox.show_datetime_in_log = true;
+```
+
 ## Detailed Documentation :
 ### Creating Object :
 The Object is JSON type object
