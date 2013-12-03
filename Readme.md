@@ -62,7 +62,7 @@ zipabox.Connect(function(){
         			if (typeof(attribute.definition) != "undefined")
                 			attrname = attribute.definition.name;
                                 
-        			console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
+        			            console.log(uuid.green + "(" + devicejson.name.bold + ")" + " - " + attrname + "(" + attr.bold + ")" + " = " + attribute.value.bold);
                         }	
         	}
         }      
