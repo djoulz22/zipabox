@@ -127,7 +127,7 @@ zipabox.Connect(OnAfterZipaboxConnect);
 ### Set Device Value
 #### Methods :
 ```js
-zipabox.SetDeviceValue(UUID,[attribute],[value],[optionnal]ON_SUCCESS,[optionnal]ON_ERROR);
+zipabox.SetDeviceValue([uuid],[attribute],[value],[optionnal]ON_SUCCESS,[optionnal]ON_ERROR);
 ```
 ##### Example :
 ```js
