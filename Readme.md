@@ -58,10 +58,6 @@ zipabox.Connect(function () {
             // Do something for each device loaded
             // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
             console.log("" + device);
-
-            if (typeof (device.json["123456"]) != "undefined") {
-                device.json["123456"].attributes["11"].setdatas(true);
-            }
         });
 });
 ```
