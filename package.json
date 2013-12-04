@@ -2,7 +2,7 @@
   "name": "zipabox",
   "version": "0.0.1",
   "description": "Module de gestion de la Zipabox",
-  "main": "index.js",
+  "main": "lib/zipabox.js",
   "scripts": {
     "test": "no tests"
   },
