@@ -133,7 +133,7 @@ zipabox.Connect(OnAfterZipaboxConnect);
 ### Set Device Value
 #### Methods :
 ```js
-zipabox.SetDeviceValue([uuid],[attribute],[value],[optionnal]ON_SUCCESS,[optionnal]ON_ERROR);
+zipabox.SetDeviceValue([uuid],[attribute],[value],[optionnal]ON_SUCCESS,[optionnal]ON_ERROR,[optionnal]ON_AFTERSETDEVICEVALUE);
 ```
 ##### Example :
 ```js
@@ -150,11 +150,11 @@ function OnAfterZipaboxConnect(){
 function OnAfterLoadDevices(){
 		
     zipabox.SetDeviceValue("12324654",11,true,
-	    function(msg){
-	    	console.log("Yes! ;-)");
-	    	zipabox.Disconnect(OnAfterZipaboxDisconnect);	
-	    },function(err){
-	    	console.log("Oh no! It's a bad day! :'-(");
+	    function(msg){ //ON_SUCCESS
+	    	console.log("Yes! ;-)");	
+	    },function(err){ //ON_ERROR
+	    	console.log("Oh no! It's a bad day! :'-(");		
+	    },function(){ //ON_AFTERSETDEVICEVALUE
 	    	zipabox.Disconnect(OnAfterZipaboxDisconnect);		
 	    });
 }
