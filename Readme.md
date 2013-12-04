@@ -32,11 +32,17 @@ This is a module to connect, load and use zipabox.
 
 Control the zipabox
 
+## NodeJS installation
+
+```
+npm install zipabox
+```
+
 ## For Developers
 
 Simple Usage of module:
 ```js
-var zipabox = require("[PATH TO zipabox.js]/zipabox");
+var zipabox = require("zipabox");
 
 zipabox.username = "[ZIPABOX LOGIN]";
 zipabox.password = "[ZIPABOX PASSWORD]";
