@@ -62,6 +62,63 @@ zipabox.Connect(function () {
 });
 ```
 
+Events Use:
+```js
+var zipabox = require("zipabox");
+
+zipabox.username = "[ZIPABOX LOGIN]";
+zipabox.password = "[ZIPABOX PASSWORD]";
+
+zipabox.events.OnBeforeConnect = function(){
+	console.log("OnBeforeConnect");
+}
+
+zipabox.events.OnAfterConnect = function(){
+	console.log("OnAfterConnect");
+	zipabox.LoadDevices();	
+}
+
+zipabox.events.OnBeforeLoadDevices = function(){
+	console.log("OnBeforeLoadDevices");
+}
+
+zipabox.events.OnAfterLoadDevices = function(){
+	console.log("OnAfterLoadDevices");
+	zipabox.Disconnect();	
+}
+
+zipabox.events.OnBeforeLoadDevice = function(device){
+	console.log("Loading : " + device.name);
+}
+
+zipabox.events.OnAfterLoadDevice = function(device){
+	console.log(device.name + " Loaded");
+	console.log(JSON.stringify(device.json,null,4));
+}
+
+zipabox.events.OnBeforeDisconnect = function(){
+	console.log("OnBeforeDisconnect");
+}
+
+zipabox.events.OnAfterDisconnect = function(){
+	console.log("OnAfterDisconnect");
+}
+
+zipabox.events.OnInitUserProgress = function(msg){
+	console.log(JSON.stringify(msg));
+}
+
+zipabox.events.OnLoginUserProgress = function(msg){
+	console.log(JSON.stringify(msg));
+}
+
+zipabox.events.OnLogoutUserProgress = function(msg){
+	console.log(JSON.stringify(msg));
+}
+
+zipabox.Connect();
+```
+
 Disable Logging :
 ```js
 zipabox.showlog = false;
