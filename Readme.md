@@ -224,3 +224,9 @@ zipabox.Connect(OnAfterZipaboxConnect);
 ```js
  zipabox.SetUnLoadedDeviceValue([uuid],[attribute],[value],[optionnal]ON_SUCCESS,[optionnal]ON_ERROR,[optionnal]ON_AFTERSETDEVICEVALUE);
 ```
+
+### Run Scene on Unloaded Device
+#### Methods :
+```js
+zipabox.RunUnLoadedScene([uuid])
+```
