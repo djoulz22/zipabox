@@ -218,3 +218,9 @@ function ForEachLoadedDevice(device){
 
 zipabox.Connect(OnAfterZipaboxConnect);
 ```
+
+### Set Device Value on Unloaded Device
+#### Methods :
+```js
+ zipabox.SetUnLoadedDeviceValue([uuid],[attribute],[value],[optionnal]ON_SUCCESS,[optionnal]ON_ERROR,[optionnal]ON_AFTERSETDEVICEVALUE);
+```
