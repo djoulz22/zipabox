@@ -23,10 +23,10 @@
     "url": "https://github.com/djoulz22/zipabox/issues"
   },
   dependencies": {
-   "request": "",
-   "sequenty": "",
-   "crypto": "",
-   "colors": "",
-   "json-file-db" : ""
+   "request": "*",
+   "sequenty": "*",
+   "crypto": "*",
+   "colors": "*",
+   "json-file-db" : "*"
    }
 }
