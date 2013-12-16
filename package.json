@@ -1,6 +1,6 @@
 {
   "name": "zipabox",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Module de gestion de la Zipabox",
   "main": "lib/zipabox.js",
   "scripts": {
@@ -27,6 +27,7 @@
    "sequenty": "*",
    "crypto": "*",
    "colors": "*",
+   "xml2js": "*",
    "json-file-db" : "*"
    }
 }
