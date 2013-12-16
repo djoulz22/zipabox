@@ -1,6 +1,6 @@
 {
   "name": "zipabox",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Module de gestion de la Zipabox",
   "main": "lib/zipabox.js",
   "scripts": {
@@ -22,10 +22,11 @@
   "bugs": {
     "url": "https://github.com/djoulz22/zipabox/issues"
   },
-  "devDependencies": {
+  dependencies": {
    "request": "",
    "sequenty": "",
    "crypto": "",
-   "colors": ""
+   "colors": "",
+   "json-file-db" : ""
    }
 }
