@@ -230,3 +230,95 @@ zipabox.Connect(OnAfterZipaboxConnect);
 ```js
 zipabox.RunUnLoadedScene([uuid])
 ```
+
+### Advanced Example
+```js
+var zipabox = require("zipabox");
+var argv = require("optimist").argv;
+
+zipabox.username = "[ZIPABOX LOGIN]";
+zipabox.password = "[ZIPABOX PASSWORD]";
+
+zipabox.showlog = (argv.l) ? argv.l : false;
+zipabox.show_datetime_in_log = true;
+
+zipabox.checkforupdate_auto = false;
+
+zipabox.events.OnBeforeConnect = function(){
+	console.log("OnBeforeConnect");
+}
+
+zipabox.events.OnAfterConnect = function(){
+	console.log("OnAfterConnect");	
+	zipabox.LoadDevicesFromFile('./devices.json');
+}
+
+zipabox.events.OnBeforeDisconnect = function(){
+	console.log("OnBeforeDisconnect");
+}
+
+zipabox.events.OnAfterDisconnect = function(){
+	console.log("OnAfterDisconnect");
+}
+
+zipabox.events.OnBeforeLoadDevices = function(){
+	console.log("OnBeforeLoadDevices");
+}
+
+zipabox.events.OnAfterLoadDevices = function(){
+	console.log("OnAfterLoadDevices");
+	zipabox.SaveDevicesToFile('./devices.json');
+}
+
+var ModuleToHTML = function(theuuid,themodule){
+	var retval = "<div id='" + theuuid + "' class='" + themodule.uiType + "'>\n";
+	retval += "<div class='name'>" + themodule.name + "</div>\n";
+	retval += "<div class='attributes'>\n";
+	for(var attributeid in themodule.attributes){
+		var attribute = themodule.attributes[attributeid];
+		var attrname = (attribute.definition) ? attribute.definition.name : attribute.name;
+		
+		retval += "<div class='attribute'>\n";
+		retval += "<div class='id'>" + attributeid + "</div>\n";
+		retval += "<div class='attributename'>" + attrname + "</div>\n";
+		retval += "<div class='value'>" + attribute.value + "</div>\n";
+		retval += "</div>\n";
+	}
+	retval += "</div>\n";	
+			
+	return retval + "</div>\n";	
+};
+
+zipabox.events.OnAfterLoadDevicesFromFile = function(result){
+	console.log("zipabox.events.OnAfterLoadDevicesFromFile");	
+	
+	if (!(result)){
+	
+		console.log("<div id='meters' class='device'>\n");
+		console.log("<div id='device' class='title'>meters</div>\n");
+		zipabox.ForEachModuleInDevice("meters",function(module_uuid,module){
+			
+			module.toString = function(){ return ModuleToHTML(module_uuid,module); };
+			
+			console.log(""+module);
+		});		
+		console.log("</div>\n");
+		
+		console.log("<div id='lights' class='device'>\n");
+		console.log("<div id='device' class='title'>lights</div>\n");
+		zipabox.ForEachModuleInDevice("lights",function(module_uuid,module){
+			
+			module.toString = function(){ return ModuleToHTML(module_uuid,module); };
+			
+			console.log(""+module);
+		});
+		console.log("</div>\n");
+		zipabox.Disconnect();	
+	}		
+	else
+		zipabox.LoadDevices();
+}
+
+zipabox.Connect();
+
+```
