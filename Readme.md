@@ -47,19 +47,28 @@ var zipabox = require("zipabox");
 zipabox.username = "[ZIPABOX LOGIN]";
 zipabox.password = "[ZIPABOX PASSWORD]";
 
-zipabox.Connect(function () {
-    // Do something when connected
-    zipabox.LoadDevices(
-        function () {
-            // Do something when all devices are loaded
-            zipabox.Disconnect();
-        },
-        function (device) {
-            // Do something for each device loaded
-            // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
-            console.log("" + device);
-        });
-});
+zipabox.showlog = false;
+zipabox.checkforupdate_auto = true;
+
+zipabox.events.OnAfterConnect = function(){
+	// Do something when connected
+    zipabox.LoadDevices();
+}
+
+zipabox.events.OnAfterLoadDevices = function(){
+	console.log("OnAfterLoadDevices");	
+	zipabox.SaveDevicesToFile('./devices.json');
+	zipabox.Disconnect();
+}
+
+zipabox.events.OnAfterLoadDevice = function(device){
+	console.log("OnAfterLoadDevice");	
+	// Do something for each device loaded
+        // use device.json to access to the device (see zipabox API https://my.zipato.com/zipato-web/api/)
+        console.log("" + device);
+}
+
+zipabox.Connect();
 ```
 
 Events Use:
