@@ -49,7 +49,7 @@ function definition :
 ```js
 	function(device){
 		if(device){ 
-			console.log(device.name + " Loading...")
+			console.log(device.name + " Loaded")
 		} 
 	};
 ```
