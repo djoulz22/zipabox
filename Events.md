@@ -1,41 +1,131 @@
 # Zipabox module's Events
 
 ## Events list
-	OnBeforeConnect: 		Event fired when you call zipabox.Connect() method BEFORE the zipabox connection,
-	OnAfterConnect: 		Event fired when you call zipabox.Connect() method AFTER success zipabox connection (zipabox.connected == true),
-	
-	OnBeforeDisconnect:		Event fired when you call zipabox.Disconnect() method BEFORE the zipabox disconnection,
-	OnAfterDisconnect:		Event fired when you call zipabox.Disconnect() method AFTER success the zipabox disconnection (zipabox.connected == false),	
-	
-	OnBeforeLoadDevices:		Event fired when you call zipabox.LoadDevices() method BEFORE loading devices,
-	OnAfterLoadDevices:		Event fired when you call zipabox.LoadDevices() method AFTER loading all devices,
-	
-	OnBeforeLoadDevice: 		Event fired for each loading device method BEFORE loading 1 device, function definition : function(device){if(device){ console.log(device.name + " Loading...")} };
-	OnAfterLoadDevice:		Event fired for each loading device method AFTER loading 1 device, function definition : function(device){if(device){ console.log(device.name + "OK")} };		
-	
-	OnBeforeGetDevicesLogs:		null,
-	OnAfterGetDevicesLogs:		null,
-	
-	OnBeforeSetDeviceValue:		null,
-	OnAfterSetDeviceValue:		null,
-	
-	OnBeforeSetUnLoadedDeviceValue:	null,		
-	OnAfterSetUnLoadedDeviceValue:	null,
-	
-	OnBeforeRunScene:		null,
-	OnAfterRunScene:		null,
-	
-	OnBeforeUnLoadedRunScene:	null,
-	OnAfterUnLoadedRunScene:	null,
-	
-	OnInitUserProgress:		null,
-	OnLoginUserProgress:		null,
-	OnLogoutUserProgress:		null,
-	
-	OnBeforeSaveDevicesToFile:	null,
-	OnAfterSaveDevicesToFile:	null,
-	OnBeforeLoadDevicesFromFile:	null,
-	OnAfterLoadDevicesFromFile:	null	
+### OnBeforeConnect:
+```
+Event fired when you call zipabox.Connect() method BEFORE the zipabox connection
+```
+### OnAfterConnect:
+```
+Event fired when you call zipabox.Connect() method AFTER success zipabox connection (zipabox.connected == true)	
+```
+
+### OnBeforeDisconnect:
+```
+Event fired when you call zipabox.Disconnect() method BEFORE the zipabox disconnection
+```
+### OnAfterDisconnect:
+```
+Event fired when you call zipabox.Disconnect() method AFTER success the zipabox disconnection (zipabox.connected == false)
+```
+
+### OnBeforeLoadDevices:
+```
+Event fired when you call zipabox.LoadDevices() method BEFORE loading devices
+```
+### OnAfterLoadDevices:
+```
+Event fired when you call zipabox.LoadDevices() method AFTER loading all devices
+```
+
+### OnBeforeLoadDevice:
+```
+Event fired for each loading device method BEFORE loading 1 device, 
+function definition : 
+```js
+	function(device){
+		if(device){ 
+			console.log(device.name + " Loading...")
+		} 
+	};
+```	
+```
+### OnAfterLoadDevice:
+```
+Event fired for each loading device method AFTER loading 1 device, 
+function definition : 
+```js
+	function(device){
+		if(device){ 
+			console.log(device.name + " Loading...")
+		} 
+	};
+```
+```
+### OnBeforeGetDevicesLogs:
+```
+null
+```
+### OnAfterGetDevicesLogs:
+```
+null	
+```
+
+### OnBeforeSetDeviceValue:
+```
+null
+```
+### OnAfterSetDeviceValue:
+```
+null	
+```
+
+### OnBeforeSetUnLoadedDeviceValue:
+```
+null		
+```
+### OnAfterSetUnLoadedDeviceValue:
+```
+null	
+```
+
+### OnBeforeRunScene:
+```
+null
+```
+### OnAfterRunScene:
+```
+null	
+```
+
+### OnBeforeUnLoadedRunScene:
+```
+null,
+```
+### OnAfterUnLoadedRunScene:
+```
+null	
+```
+
+### OnInitUserProgress:
+```
+null
+```
+### OnLoginUserProgress:
+```
+null
+```
+### OnLogoutUserProgress:
+```
+null	
+```
+
+### OnBeforeSaveDevicesToFile:
+```
+null
+```
+### OnAfterSaveDevicesToFile:
+```
+null,
+```
+### OnBeforeLoadDevicesFromFile:
+```
+null,
+```
+### OnAfterLoadDevicesFromFile:
+```
+null	
+```
 
 ## Using events example :
 ```js
