@@ -7,7 +7,8 @@ Event fired when you call zipabox.Connect() method BEFORE the zipabox connection
 ```
 ### OnAfterConnect:
 ```
-Event fired when you call zipabox.Connect() method AFTER success zipabox connection (zipabox.connected == true)	
+Event fired when you call zipabox.Connect() method AFTER success zipabox connection 
+So, when zipabox.connected is true
 ```
 
 ### OnBeforeDisconnect:
@@ -16,7 +17,8 @@ Event fired when you call zipabox.Disconnect() method BEFORE the zipabox disconn
 ```
 ### OnAfterDisconnect:
 ```
-Event fired when you call zipabox.Disconnect() method AFTER success the zipabox disconnection (zipabox.connected == false)
+Event fired when you call zipabox.Disconnect() method AFTER success the zipabox disconnection
+So, when zipabox.connected is false
 ```
 
 ### OnBeforeLoadDevices:
