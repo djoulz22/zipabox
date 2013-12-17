@@ -158,39 +158,6 @@ zipabox.password="blabliblu";
 ```js
 zipabox.connected=false;
 ```
-#### Methods :
-```js
-zipabox.Connect([optionnal]ON_AFTERCONNECT_FUNCTION_DEFINITION);
-zipabox.Disconnect([optionnal]ON_AFTERDISCONNECT_FUNCTION_DEFINITION);
-
-zipabox.LoadDevices([optionnal]ON_AFTERLOADDEVICES,[optionnal]FOREACH_LOADED_DEVICE);
-```
-##### Example :
-```js
-function OnAfterZipaboxDisconnect(){
-    console.log("Disconnected");
-}
-
-function OnAfterZipaboxConnect(){
-    console.log("Connected");
-    
-    zipabox.LoadDevices(OnAfterLoadDevices,ForEachLoadedDevice);
-    // OR 
-    zipabox.LoadDevices(OnAfterLoadDevices);
-    // OR 
-    zipabox.LoadDevices(null,ForEachLoadedDevice);
-}
-
-function OnAfterLoadDevices(){
-    zipabox.Disconnect(OnAfterZipaboxDisconnect);
-}
-
-function ForEachLoadedDevice(device){
-    console.log(""+device); //Call device.toString() whith "" before device else show JSON Object (as object)
-}
-
-zipabox.Connect(OnAfterZipaboxConnect);
-```
 
 ### Set Device Value
 #### Methods :
@@ -199,33 +166,34 @@ zipabox.SetDeviceValue([uuid],[attribute],[value],[optionnal]ON_SUCCESS,[optionn
 ```
 ##### Example :
 ```js
-function OnAfterZipaboxDisconnect(){
-    console.log("Disconnected");
-}
-
-function OnAfterZipaboxConnect(){
-    console.log("Connected");  
-    console.log("Loading devices : ");  
-    zipabox.LoadDevices(OnAfterLoadDevices,ForEachLoadedDevice);
-}
-
-function OnAfterLoadDevices(){
 		
-    zipabox.SetDeviceValue("12324654",11,true,
-	    function(msg){ //ON_SUCCESS
-	    	console.log("Yes! ;-)");	
-	    },function(err){ //ON_ERROR
-	    	console.log("Oh no! It's a bad day! :'-(");		
-	    },function(){ //ON_AFTERSETDEVICEVALUE
-	    	zipabox.Disconnect(OnAfterZipaboxDisconnect);		
-	    });
+zipabox.SetDeviceValue("12324654",11,true,
+    function(msg){ //ON_SUCCESS
+    	console.log("Yes! ;-)");	
+    },function(err){ //ON_ERROR
+    	console.log("Oh no! It's a bad day! :'-(");		
+    },function(){ //ON_AFTERSETDEVICEVALUE
+    	zipabox.Disconnect();		
+    });
+```
+##### Example2 :
+```js
+	
+zipabox.events.OnBeforeSetDeviceValue = function(){
+	console.log("OnBeforeSetDeviceValue");
 }
 
-function ForEachLoadedDevice(device){
-    console.log(""+device); //Call device.toString() whith "" before device else show JSON Object (as object)
+zipabox.events.OnAfterSetDeviceValue = function(){
+	console.log("OnAfterSetDeviceValue");
+	zipabox.Disconnect();
 }
-
-zipabox.Connect(OnAfterZipaboxConnect);
+		
+zipabox.SetDeviceValue("12324654",11,true,
+    function(msg){ //ON_SUCCESS
+    	console.log("Yes! ;-)");	
+    },function(err){ //ON_ERROR
+    	console.log("Oh no! It's a bad day! :'-(");		
+    });
 ```
 
 ### Set Device Value on Unloaded Device
