@@ -91,7 +91,7 @@ Array of object :
 ## zipabox.devices Property :
 ```
 After loading devices [see Events.md], an object was added (json) access to device with method
-zipabox.GetModuleByDevice([devicename]) 
+zipabox.GetJSONModulesByDeviceName([devicename]) 
 [see Methods.md]
 ```
 	
