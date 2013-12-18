@@ -102,24 +102,80 @@ null
 
 ### OnInitUserProgress:
 ```
-null
+Event fired when you call zipabox.Connect(). It inform you on the progress of InitUser.
+function definition : 
+```
+```js
+	function(msg){
+                // Your code with msg		
+	};
+```
+```
+        msg is an JSON Object with this format :
+        
+        {
+                statusCode (integer from 0 to 4), 
+                msg (string)
+        };  
+        
+        msg.statusCode = 0 : start InitUser,
+        msg.statusCode = 1 : InitUser is successfuly terminated,
+        msg.statusCode > 1 : An error occured during InitUser, see msg.msg
 ```
 ### OnLoginUserProgress:
 ```
-null
+Event fired when you call zipabox.Connect(). It inform you on the progress of LoginUser.
+function definition : 
+```
+```js
+	function(msg){
+                // Your code with msg		
+	};
+```
+```
+        msg is an JSON Object with this format :
+        
+        {
+                statusCode (integer from 0 to 5), 
+                msg (string)
+        };  
+        
+        msg.statusCode = 0 : start LoginUser,
+        msg.statusCode = 1 : LoginUser invalid username or password,
+        msg.statusCode = 2 : LoginUser is successfuly terminated,
+        msg.statusCode > 2 : An error occured during LoginUser, see msg.msg
 ```
 ### OnLogoutUserProgress:
 ```
-null	
+Event fired when you call zipabox.Disconnect(). It inform you on the progress of LogoutUser.
+function definition : 
+```
+```js
+	function(msg){
+                // Your code with msg		
+	};
+```
+```
+        msg is an JSON Object with this format :
+        
+        {
+                statusCode (integer from 0 to 5), 
+                msg (string)
+        };  
+        
+        msg.statusCode = 0 : start LogoutUser,
+        msg.statusCode = 1 : LogoutUser you are not connected,
+        msg.statusCode = 2 : LogoutUser is successfuly terminated,
+        msg.statusCode > 2 : An error occured during LogoutUser, see msg.msg
 ```
 
 ### OnBeforeSaveDevicesToFile:
 ```
-null
+Event fired when you call zipabox.SaveDevicesToFile BEFORE start of saving file 
 ```
 ### OnAfterSaveDevicesToFile:
 ```
-null,
+Event fired when you call zipabox.SaveDevicesToFile AFTER process SUCCESS
 ```
 ### OnBeforeLoadDevicesFromFile:
 ```
