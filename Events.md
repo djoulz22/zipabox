@@ -36,7 +36,7 @@ Event fired for each loading device method BEFORE loading 1 device,
 function definition : 
 ```
 ```js
-	function(device){
+	zipabox.events.OnBeforeLoadDevice = function(device){
 		if(device){ 
 			console.log(device.name + " Loading...")
 		} 
@@ -49,7 +49,7 @@ Event fired for each loading device method AFTER loading 1 device,
 function definition : 
 ```
 ```js
-	function(device){
+	zipabox.events.OnAfterLoadDevice = function(device){
 		if(device){ 
 			console.log(device.name + " Loaded")
 		} 
