@@ -39,11 +39,9 @@ npm install zipabox
 ```
 
 ## Help :
-```
 Properties : click [here][2] for details
 Methods : click [here][3] for details
 Events : click [here][4] for details
-```
 
 ## For Developers
 
