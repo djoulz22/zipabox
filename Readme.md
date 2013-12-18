@@ -306,6 +306,6 @@ zipabox.Connect();
 ```
 
 [1]: https://raw.github.com/PFrederi/SARAH-Plugin-Zipabox/master/index.jpeg
-[2]: Properties.md
-[3]: Methods.md
-[4]: Events.md
+[2]: https://github.com/djoulz22/zipabox/blob/master/Properties.md
+[3]: https://github.com/djoulz22/zipabox/blob/master/Methods.md
+[4]: https://github.com/djoulz22/zipabox/blob/master/Events.md
