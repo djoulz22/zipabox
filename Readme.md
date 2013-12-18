@@ -27,23 +27,25 @@ This is a module to connect, load and use zipabox.
  To Public License, See http://www.wtfpl.net/ for more details.
 ```
 
-
 ## Description
 
 Control the zipabox
 
 ![zipabox][1]
-[1]: https://raw.github.com/PFrederi/SARAH-Plugin-Zipabox/master/index.jpeg
 
 ## NodeJS installation
 ```
 npm install zipabox
 ```
 
-## For Developers
+## Help :
+```
+Properties : click [here][2] for details
+Methods : click [here][3] for details
+Events : click [here][4] for details
+```
 
-### Events : click [here][2]
-[2]: Events.md
+## For Developers
 
 Simple Usage of module:
 ```js
@@ -76,7 +78,7 @@ zipabox.events.OnAfterLoadDevice = function(device){
 zipabox.Connect();
 ```
 
-Events Use:
+Events Use: click [here][3] for details
 ```js
 var zipabox = require("zipabox");
 
@@ -304,3 +306,8 @@ zipabox.events.OnAfterLoadDevicesFromFile = function(result){
 zipabox.Connect();
 
 ```
+
+[1]: https://raw.github.com/PFrederi/SARAH-Plugin-Zipabox/master/index.jpeg
+[2]: Properties.md
+[3]: Methods.md
+[4]: Events.md
