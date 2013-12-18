@@ -106,7 +106,7 @@ Event fired when you call zipabox.Connect(). It inform you on the progress of In
 function definition : 
 ```
 ```js
-	function(msg){
+	zipabox.events.OnInitUserProgress = function(msg){
                 // Your code with msg		
 	};
 ```
@@ -128,7 +128,7 @@ Event fired when you call zipabox.Connect(). It inform you on the progress of Lo
 function definition : 
 ```
 ```js
-	function(msg){
+	zipabox.events.OnLoginUserProgress = function(msg){
                 // Your code with msg		
 	};
 ```
@@ -151,7 +151,7 @@ Event fired when you call zipabox.Disconnect(). It inform you on the progress of
 function definition : 
 ```
 ```js
-	function(msg){
+	zipabox.events.OnLogoutUserProgress = function(msg){
                 // Your code with msg		
 	};
 ```
