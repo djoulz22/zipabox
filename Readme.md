@@ -32,6 +32,9 @@ This is a module to connect, load and use zipabox.
 
 Control the zipabox
 
+![zipabox][1]
+[1]: https://raw.github.com/PFrederi/SARAH-Plugin-Zipabox/master/index.jpeg
+
 ## NodeJS installation
 
 ```
