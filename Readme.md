@@ -309,3 +309,5 @@ zipabox.Connect();
 [2]: https://github.com/djoulz22/zipabox/blob/master/Properties.md
 [3]: https://github.com/djoulz22/zipabox/blob/master/Methods.md
 [4]: https://github.com/djoulz22/zipabox/blob/master/Events.md
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/djoulz22/zipabox/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
