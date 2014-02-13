@@ -315,6 +315,6 @@ zipabox.Connect();
 [2]: https://github.com/djoulz22/zipabox/blob/master/Properties.md
 [3]: https://github.com/djoulz22/zipabox/blob/master/Methods.md
 [4]: https://github.com/djoulz22/zipabox/blob/master/Events.md
-[5]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jchenavas%40gmail%2ecom&lc=FR&item_name=DjoulZ22&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
+[5]: http://goo.gl/S6Nf4s
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/djoulz22/zipabox/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
