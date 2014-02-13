@@ -1,6 +1,6 @@
 {
   "name": "zipabox",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Module de gestion de la Zipabox",
   "main": "lib/zipabox.js",
   "scripts": {
