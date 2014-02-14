@@ -312,9 +312,9 @@ zipabox.Connect();
 ```
 
 [1]: https://raw.github.com/PFrederi/SARAH-Plugin-Zipabox/master/index.jpeg
-[2]: https://github.com/djoulz22/zipabox/blob/master/Properties.md
-[3]: https://github.com/djoulz22/zipabox/blob/master/Methods.md
-[4]: https://github.com/djoulz22/zipabox/blob/master/Events.md
+[2]: http://goo.gl/pMu1lJ
+[3]: http://goo.gl/GgH2eu
+[4]: http://goo.gl/kuO9WS
 [5]: http://goo.gl/S6Nf4s
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/djoulz22/zipabox/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
