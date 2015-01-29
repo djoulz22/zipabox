@@ -4,6 +4,10 @@ This is a module to connect, load and use zipabox.
 
 donate to the developer through this >>[link][5]<<
 
+[![NPM](https://nodei.co/npm/zipabox.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/zipabox/)
+
+[![NPM](https://nodei.co/npm-dl/zipabox.png)](https://nodei.co/npm/zipabox/)
+
 ## License
 
 ```
